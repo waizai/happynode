@@ -2,7 +2,7 @@
 * @Author: dangxiaoli
 * @Date:   2017-12-20 13:52:15
 * @Last Modified by:   dangxiaoli
-* @Last Modified time: 2017-12-20 14:29:37
+* @Last Modified time: 2017-12-21 14:45:52
 */
 
 /*
@@ -18,6 +18,7 @@
 
 const buf = Buffer.from('this is a test!')
 console.log(buf.length)
+//返回 buf 在字节数上分配的内存量。 注意，这并不一定反映 buf 内可用的数据量。
 
 const buf2 = Buffer.alloc(10);
 buf2[0] = 2;

@@ -2,7 +2,7 @@
 * @Author: dangxiaoli
 * @Date:   2017-12-20 14:24:13
 * @Last Modified by:   dangxiaoli
-* @Last Modified time: 2017-12-20 14:28:42
+* @Last Modified time: 2017-12-21 14:52:41
 */
 
 const { StringDecoder } = require('string_decoder');
@@ -22,3 +22,4 @@ for(let i = 0,len = buf8.length; i < len; i += 5){
     buf8.copy(b, 0, i)
     console.log(decoder.write(b))
 }
+
