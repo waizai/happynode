@@ -2,7 +2,7 @@
 * @Author: dangxiaoli
 * @Date:   2018-01-17 15:42:33
 * @Last Modified by:   dangxiaoli
-* @Last Modified time: 2018-01-17 16:39:46
+* @Last Modified time: 2018-01-17 17:07:09
 */
 
 //----------------演示Promise/A-----------------------
@@ -100,6 +100,37 @@ const promisify = function(res){
 }
 
 //Promise和Deferred的差别
+
+//---------------------Q模块---------------------------------
+
+defer.prototype.makeNodeResolver = function(){
+    var self = this;
+    return function(err, value){
+        if(err){
+            self.reject(err)
+        }else if(arguments.length > 2){
+            self.resolve(array_slice(arguments, 1))
+        }else {
+            self.resolve(value);
+        }
+    }
+}
+
+
+//-------------------fs.readFile------------------------------
+
+var readFile = function(file, encoding){
+    var deferred = Q.defer();
+    fs.readFile(file, encoding, deferred.makeNodeResolver());
+    return deferred.promise;
+}
+
+
+//定义后的调用
+
+
+
+
 
 
 
